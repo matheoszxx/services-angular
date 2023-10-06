@@ -1,3 +1,6 @@
+<h4>Pesquisar Pokemon</h4>
+<input class="search" type="text" (input)="getPokemon($any($event.target).value)">
+
 <div class="card">
   <div class="card__title">
     <h3>{{ pokemon.name }}</h3>
@@ -8,7 +11,7 @@
   </div>
 
   <div class="cards__stats">
-    <span *ngFor="let t of pokemon.types" class="cards__stats__type" >{{ t.type.name }}</span>
+    <span *ngFor="let t of pokemon.types" [style.background-color]="getTypeColor(t.type.name)" class="cards__stats__type" >{{ t.type.name }}</span>
   </div>
 
 </div>

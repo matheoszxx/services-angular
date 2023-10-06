@@ -25,6 +25,11 @@
   height: 70%;
 }
 
+.card__body > img{
+  height: 230px;
+
+}
+
 .cards__stats{
   padding-top: 10px;
   display: flex;
@@ -40,6 +45,8 @@
   border-radius: 10px;
   padding: 8px;
   margin-right: 5px;
+}
 
-
+.search{
+  margin-bottom: 20px;
 }

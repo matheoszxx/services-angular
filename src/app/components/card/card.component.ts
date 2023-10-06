@@ -15,32 +15,36 @@ export class CardComponent implements OnInit {
       front_default: ''
     },
     types: []
-
   }
 
   constructor(
     //injetando o services E NÃO PRECISAMOS INSTANCIAR ELE
-    private service: PokemonServicesService
+    private service: PokemonServicesService,
+    private typeColorService: PokemonServicesService,
   ) {  }
 
   ngOnInit(): void {
-      this.service.getPokemon("charmander").subscribe(
-        {
-          next: result => {
-            this.pokemon = {
-              id: result.id,
-              name: result.name,
-              sprites: result.sprites,
-              types: result.types
-            }
-            console.log(this.pokemon);
+      this.getPokemon("pikachu")
+  }
 
-
-          },
-          error: erro => console.log(erro)
-
+  getPokemon(searchName:string){
+    this.service.getPokemon(searchName).subscribe(
+      {
+        next: result => {
+          this.pokemon = {
+            id: result.id,
+            name: result.name,
+            sprites: result.sprites,
+            types: result.types
+          }
+          console.log(this.pokemon);
         }
-      )
+      }
+    )
+  }
+
+  getTypeColor(type: string): string {
+    return this.typeColorService.getColorForType(type);
   }
 
 }
