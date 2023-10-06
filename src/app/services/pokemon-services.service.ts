@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment'
 
@@ -6,12 +7,16 @@ import { environment } from 'src/environments/environment'
 })
 export class PokemonServicesService {
   private baseURLApi: string =""
+  private pokeData: any
 
-  constructor() {
+  //injeto o HttpClient que é a classe do HttpClientModules no meu services
+  constructor(private http: HttpClient) {
     this.baseURLApi = environment.pokeApi;
   }
 
   getPokemon(pokemonName:string){
-    console.log(pokemonName);
+    this.pokeData = this.http.get(`${this.baseURLApi}${pokemonName}`)
+    console.log(this.pokeData);
+
   }
 }
