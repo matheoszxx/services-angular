@@ -11,11 +11,9 @@ export class CardComponent implements OnInit {
   attributesTypes:string[] = ['FIRE','POISON']
 
   constructor(
-    //injetando o services
+    //injetando o services E NÃO PRECISAMOS INSTANCIAR ELE
     private service: PokemonServicesService
-  ) {
-
-   }
+  ) {  }
 
   ngOnInit(): void {
       this.service.getPokemon('CHARIZARD')
