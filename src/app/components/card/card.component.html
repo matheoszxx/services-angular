@@ -8,7 +8,7 @@
   </div>
 
   <div class="cards__stats">
-    <span *ngFor="let type of attributesTypes" class="cards__stats__type" >{{ type }}</span>
+    <span *ngFor="let t of pokemon.types" class="cards__stats__type" >{{ t.type.name }}</span>
   </div>
 
 </div>
