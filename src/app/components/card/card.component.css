@@ -5,6 +5,8 @@
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #232323;
 }
 
@@ -49,4 +51,10 @@
 
 .search{
   margin-bottom: 20px;
+}
+
+.edit-input{
+  margin: auto;
+  margin-bottom: 10px;
+  color: antiquewhite;
 }
